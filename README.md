@@ -1,5 +1,6 @@
 ## 🏨 HostelSphere
-**HostelSphere** is a full-stack **hostel management web application** built using **Python Flask, MySQL, and HTML/CSS**, inspired by real-life hostel challenges I personally faced while living in a hostel for over three years.
+**HostelSphere** is a full-stack **hostel management web application** built using **Python Flask, MySQL, and HTML/CSS**, inspired by real-life hostel challenges people face such as repeated manual form fillings when taking/changing hostel, lack of transparency, messy room allotments, fee status, service complaints( cleaning, repairing, wifi issue, etc), latest updates, everything at once in **HostelSphere**
+
 
 ---
 
@@ -76,29 +77,29 @@ HostelSphere-WebApp/
 
 ├── app.py
 
-├── templates/
+├────── templates/
 
-│   ├── index.html
+│     ├── index.html
 
-│   ├── login.html
+│     ├── login.html
 
-│   ├── register_hostel.html
+│     ├── register_hostel.html
 
-│   ├── register_resident.html
+│     ├── register_resident.html
 
-│   ├── login_hostel.html
+│     ├── login_hostel.html
 
-│   └── dashboard.html
+│     └── dashboard.html
 
-├── static/
+├───── static/
 
-│   ├── css/
+│     ├── css/
 
-│   ├── images/
+│     ├── images/
 
-│   └── js/
+│     └── js/
 
-└── README.md
+└───── README.md
 
 
 ---
