@@ -1,4 +1,4 @@
- # 🏨 HostelSphere
+## 🏨 HostelSphere
 **HostelSphere** is a full-stack **hostel management web application** built using **Python Flask, MySQL, and HTML/CSS**, inspired by real-life hostel challenges I personally faced while living in a hostel for over three years.
 
 ---
@@ -10,9 +10,9 @@
 
 - **Auto-generated unique IDs**
 
-    - Hostel ID: SPHERE0001, SPHERE0002, …
+    - **Hostel ID:** SPHERE0001, SPHERE0002, …
 
-    - Resident ID: RES0001, RES0002, …
+    - **Resident ID:** RES0001, RES0002, …
 
 - **Secure password authentication**
 
