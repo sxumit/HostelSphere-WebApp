@@ -6,9 +6,9 @@
   
      - Give that **Resident ID** to your **Hostel Incharge** (**HOSTEL MUST BE REGISTERED TO HOSTELSPHERE**)
   
-     - **Hostel Incharge** adds you to their hostel
+     - **Hostel Incharge** adds you to their hostel. Use **login as Resident**, fill resident username and password, gets you to your dashboard.
   
-     - No paper work, no personal meet, fast, efficient and transparent.
+     - No paper work, no personal meet, fast, efficient and transparent
        
      - ### Want to change your Hostel?
        
