@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Register Resident</title>
+    <style>
+        body {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #e8e9dd;
+            font-family: Arial, sans-serif;
+        }
+        .box {
+            background: white;
+            padding: 40px;
+            width: 420px;
+            border-radius: 12px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+        }
+        input, select, button {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+        }
+        button {
+            background: #4c629b;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+<div class="box">
+    <h2>Resident Registration</h2>
+    <form method="POST">
+        <input name="name" placeholder="Full Name" required>
+        <input name="age" placeholder="Age" required>
+        <select name="gender">
+            <option>Male</option>
+            <option>Female</option>
+        </select>
+        <input name="phone" placeholder="Phone Number" required>
+        <input name="father" placeholder="Father's Name" required>
+        <input name="address" placeholder="Permanent Address" required>
+        <input name="nationality" placeholder="Nationality" required>
+        <button type="submit">Register</button>
+    </form>
+</div>
+
+</body>
+</html>

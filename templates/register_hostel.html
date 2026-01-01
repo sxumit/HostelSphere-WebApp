@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Register Hostel</title>
+    <style>
+        body {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #e8e9dd;
+            font-family: Arial, sans-serif;
+        }
+        .box {
+            background: white;
+            padding: 40px;
+            width: 400px;
+            border-radius: 12px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+        }
+        input, button {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+        }
+        button {
+            background: #4c629b;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+<div class="box">
+    <h2>Hostel Registration</h2>
+    <form method="POST">
+    <input type="text" name="incharge_name" placeholder="Incharge Name" required>
+    <input type="text" name="hostel_name" placeholder="Hostel Name" required>
+    <input type="email" name="email" placeholder="Hostel Email" required>
+    <input type="password" name="password" placeholder="Set Password" required>
+    <button type="submit">Register</button>
+</form>
+
+</div>
+
+</body>
+</html>

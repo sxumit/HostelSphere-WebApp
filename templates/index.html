@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HostelSphere | Your Second Home</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
+        rel="stylesheet">
+    <!-- cursive -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+
+        }
+
+        body {
+            line-height: 1.6;
+            color: #333;
+        }
+
+        /* HEADER */
+        
+        header {
+            display: flex;
+            /* position: sticky; */
+            align-items: center;
+            padding: 18px 60px;
+            background: #e8e9dd;
+            top: 0;
+            z-index: 1000;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            font-size: 32px;
+            font-weight: bold;
+            color: #cb9942;
+            display: inline-block;
+        }
+
+
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            align-items: center;
+            gap: 25px;
+            font-family: "Ubuntu", sans-serif;
+            position: sticky;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #333;
+            transition: color 0.3s ease;
+            font-size: 18px;
+            padding: 8px 18px;
+            background: #efefed;
+            color: #000000;
+            border-radius: 27px;
+            font-size: 17px;
+        }
+
+        nav ul li a:hover {
+            color: #d82c2c;
+        }
+
+        .signup-btn {
+            padding: 8px 18px;
+            background: #2c4993;
+            color: #fff !important;
+            border-radius: 20px;
+            font-size: 17px;
+        }
+
+        /* HERO SECTION */
+        .hero {
+            height: 85vh;
+            background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
+                url('https://images.unsplash.com/photo-1590490360182-c33d57733427');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            padding-left: 80px;
+        }
+
+        .hero-text {
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            color: #ffffff;
+            max-width: 1200px;
+        }
+
+        .hero h2 {
+            font-size: 18px;
+            opacity: 0.7;
+            font-family: "Ubuntu", sans-serif;
+        }
+
+        .hero-text h1 {
+            font-size: 48px;
+            margin-top: 20px;
+        }
+
+        .hero-text h3 {
+            opacity: 0.7;
+            font-size: 26px;
+            margin-bottom: 70px;
+            font-family: serif;
+        }
+
+        .features {
+            padding: 20px 60px;
+            background: #e8e9dd;
+        }
+
+        .features h4 {
+            font-weight: 400;
+            font-family:"Ubuntu", sans-serif;
+            color: #2c4993;
+            margin-top: 4px;
+            margin-bottom: 25px;
+            font-size: large;
+        }
+
+        .features h5 {
+            font-size: 40px;
+            text-align: center;
+            margin-bottom: 1px;
+            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            /* padding: 8px 18px; */
+            background: #e8e9dd;
+            color: #121312c5;
+
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 30px;
+        }
+
+        .feature-box {
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 12px;
+            font-size: 17px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+        }
+
+        .feature-box:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 14px 35px rgba(0, 0, 0, 0.15);
+        }
+
+        .feature-box h3 {
+            margin-bottom: 10px;
+            color: #121312c5;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-weight: 10px;
+        }
+
+        .feature-box p {
+            font-size: 16px;
+            color: #2c4993;
+            font-weight: 400;
+            font-family:"Ubuntu", sans-serif ;
+
+        }
+
+
+        /* CONTACT SECTION */
+        .contact {
+            padding: 150px;
+        }
+
+        .contact h2 {
+            
+            font-size: 40px;
+            margin-bottom: px;
+            color: #121312c5;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .contact-info {
+            display: inline;
+            max-width: 600px;
+            /* margin: auto; */
+            /* text-align: center; */
+            font-size: 16px;
+            color: #2c4993;
+            font-family: "Ubuntu", sans-serif;
+            
+        }
+
+        footer {
+            text-align: center;
+            padding: 15px;
+            background: #1f3c88;
+            color: #fff;
+            font-size: 14px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header>
+        <img src="{{ url_for('static', filename='images/globe.png') }}" height="35px" width="35 px" >
+        <!-- <img src="globe.png" alt="" srcset="" height="35px" width="35 px"> -->
+        <div class="logo"> HostelSphere, make it easy...</div>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#features">Features</a></li>
+                <li><a href="#contact">Contact Us</a></li>
+                <li><a href="/login" class="signup-btn">Login</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="hero-text">
+            <h1> Welcome to The HostelSphere,</h1>
+            <!-- <h4><em>~the Home you need, the Home we give</em></h4> -->
+            <h2>Hostel & PG Management platform</h2>
+            <h2>Clean Accomodation data</h2>
+            <h2>facilatates interactivity between residents</h2>
+            <h2>Easy access to emenities</h2>
+            <h2>Digitalised facilities</h2>
+            <h2>Data privacy and Authentication</h2>
+
+        </div>
+    </section>
+
+    <!-- FEATURES -->
+    <section class="features" id="features">
+        <h5>Features</h5><hr> <br>
+        <h4>HostelSphere is a modern hostel management platform built to simplify daily operations and
+            administration.
+            It brings room management, student records, fee tracking, and communication into one unified system.
+            Designed for efficiency and ease of use, HostelSphere reduces manual effort and improves
+            transparency.
+            Our mission is to help hostels operate smarter while creating a better living experience for
+            students.</h4> <br>
+
+        <div class="feature-grid">
+            <div class="feature-box">
+                <h3>Room Management</h3>
+                <p>Easily manage rooms, occupancy, and availability in one place.</p>
+            </div>
+
+            <div class="feature-box">
+                <h3>Student Records</h3>
+                <p>Maintain complete student details securely with quick access.</p>
+            </div>
+
+            <div class="feature-box">
+                <h3>Fee Tracking</h3>
+                <p>Track hostel fees, dues, and payment history efficiently.</p>
+            </div>
+
+            <div class="feature-box">
+                <h3>Complaints & Notices</h3>
+                <p>Students can raise issues and receive important announcements.</p>
+            </div>
+        </div> 
+    </section>
+
+
+    <!-- CONTACT -->
+    <section class="contact" id="contact" style="padding: 80px; background: #e8e9dd; color: #fff;">
+        <h2 style="text-align: center; margin-bottom: 0px;">Contact Us</h2> <hr> <br>
+        <div class="contact-info" style="max-width: 700px; margin: auto; font-size: 18px; line-height: 2;">
+            <p>Knowledge Park, Greater Noida, India</p>
+            <p>+91 98765 43210</p>
+            <p>support@hostelsphere.com</p>
+            <p>Follow us on -</p>
+            <a href="https://instagram.com" target="_blank">Instagram </a> <br>
+            <a href="https://facebook.com" target="_blank">Facebook</a>
+            
+        </div>
+    </section>
+
+
+    <footer>
+        © 2025 HostelSphere. All rights reserved.
+    </footer>
+
+</body>
+
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Dashboard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f4f4;
+            padding: 40px;
+        }
+
+        .card {
+            background: white;
+            padding: 30px;
+            max-width: 600px;
+            margin: auto;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="card">
+        <h2>Hostel Dashboard</h2>
+        <h2>Welcome, {{ hostel_name }}</h2>
+        <p>Hostel ID: {{ hostel_id }}</p>
+        <p><strong>Hostel ID:</strong> {{ hostel_id }}</p>
+        <p>Add Resident section will come here.</p>
+    </div>
+    <a href="/logout">Logout</a>
+    <h3>Add Resident to Hostel</h3>
+
+    <form method="POST" action="/add-resident">
+        <input type="text" name="resident_id" placeholder="Enter Resident ID (RES0001)" required>
+        <button type="submit">Add Resident</button>
+    </form>
+
+    {% if message %}
+    <p style="color: green;">{{ message }}</p>
+    {% endif %}
+
+<h2>Welcome, {{ hostel_name }}</h2>
+
+<h3>Residents List</h3>
+
+{% if residents %}
+<table border="1" cellpadding="8">
+    <tr>
+        <th>Resident ID</th>
+        <th>Name</th>
+        <th>Room No</th>
+        <th>Email</th>
+    </tr>
+
+    {% for r in residents %}
+    <tr>
+        <td>{{ r.resident_id }}</td>
+        <td>{{ r.name }}</td>
+        <td>{{ r.room_no }}</td>
+        <td>{{ r.email }}</td>
+    </tr>
+    {% endfor %}
+</table>
+{% else %}
+<p>No residents registered yet.</p>
+{% endif %}
+
+</body>
+
+</html>
