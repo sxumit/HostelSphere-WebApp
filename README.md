@@ -26,8 +26,7 @@
 
     - Add residents using Resident ID
 
-
-
+    - Give updates
 
 - Resident dashboard to:
 
