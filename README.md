@@ -1,7 +1,24 @@
 ## 🏨 HostelSphere
-**HostelSphere** is a full-stack **hostel management web application** built using **Python Flask, MySQL, and HTML/CSS**, inspired by real-life hostel challenges people face such as repeated manual form fillings when taking/changing hostel, lack of transparency, messy room allotments, fee payment status, service complaints( cleaning, repairing, wifi issue, etc), latest updates, everything at once in **HostelSphere**
+**HostelSphere** is a full-stack **hostel management web application** built using **Python Flask, MySQL, and HTML/CSS**, inspired by real-life hostel challenges people face.
+ - #### Problems faced by Hostel:
 
-- ### What you have to do:
+   - No resident database
+    
+   - Manual form verification and its storage
+
+   - Unchecked fee status
+ 
+   - No interaction with residents
+ 
+ - #### Problems faced by Residents:
+   - Delay in services ( cleaning, repairment, electrical failure, wifi problems)
+    
+   - No transparency in work, irregular room allotments
+ 
+   - Have to meet personally to raise Complaints
+
+
+   ## What we offer:
      - From **"Register as a Resident"** section, fill your details only once and generate your **"Unique Resident  ID"**
   
      - Give that **Resident ID** to your **Hostel Incharge** (**HOSTEL MUST BE REGISTERED TO HOSTELSPHERE**)
@@ -40,6 +57,8 @@
     - Add residents using Resident ID
 
     - Give updates
+ 
+    - Read resident complaints
 
 - Resident dashboard to:
 
@@ -48,7 +67,7 @@
 
     - Get latest updates and notices
       
-    - Raise complaints from your anywhere
+    - Raise complaints from anywhere. No personal meet required
 
 
 - Simple and clean user interface
@@ -87,23 +106,23 @@ HostelSphere-WebApp/
 
 │
 
-├── app.py
+├───────── app.py
 
-├────── templates/
+├── templates/
 
-│     ├── index.html
+│       ├── index.html
 
-│     ├── login.html
+│       ├── login.html
 
-│     ├── register_hostel.html
+│       ├── register_hostel.html
 
-│     ├── register_resident.html
+│       ├── register_resident.html
 
-│     ├── login_hostel.html
+│       ├── login_hostel.html
 
-│     └── dashboard.html
+│       └── dashboard.html
 
-├───── static/
+├──────── static/
 
 │     ├── css/
 
@@ -111,7 +130,7 @@ HostelSphere-WebApp/
 
 │     └── js/
 
-└───── README.md
+└─────── README.md
 
 
 ---
