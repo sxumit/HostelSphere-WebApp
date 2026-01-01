@@ -1,6 +1,19 @@
 ## 🏨 HostelSphere
 **HostelSphere** is a full-stack **hostel management web application** built using **Python Flask, MySQL, and HTML/CSS**, inspired by real-life hostel challenges people face such as repeated manual form fillings when taking/changing hostel, lack of transparency, messy room allotments, fee status, service complaints( cleaning, repairing, wifi issue, etc), latest updates, everything at once in **HostelSphere**
 
+- ### What you have to do:
+     - From **"Register as a Resident"** section, fill your details only once and generate your **"Unique Resident  ID"**
+  
+     - Give that **Resident ID** to your **Hostel Incharge** (**HOSTEL MUST BE REGISTERED TO HOSTELSPHERE**)
+  
+     - **Hostel Incharge** adds you to their hostel
+  
+     - No paper work, no personal meet, fast, efficient and transparent.
+       
+     - ### Want to change your Hostel?
+       
+        - **Logout --> give the same Resident ID to the new Hostel --> get added.**
+
 
 ---
 
