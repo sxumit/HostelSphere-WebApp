@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Resident Dashboard | HostelSphere</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: "Segoe UI", sans-serif;
+    background: #f2f4f8;
+}
+
+.navbar {
+    background: #2c4993;
+    color: white;
+    padding: 18px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.container {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 20px;
+}
+
+.card {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+    margin-bottom: 30px;
+}
+
+.card h3 {
+    margin-top: 0;
+    color: #2c4993;
+}
+
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 15px;
+}
+
+.info-box {
+    background: #f5f7ff;
+    padding: 15px;
+    border-radius: 8px;
+    font-size: 15px;
+}
+
+.logout {
+    color: white;
+    text-decoration: none;
+    background: #e63946;
+    padding: 8px 16px;
+    border-radius: 6px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="navbar">
+    <h2>👤 Resident Dashboard</h2>
+    <a href="/logout" class="logout">Logout</a>
+</div>
+
+<div class="container">
+
+    <div class="card">
+        <h3>Welcome, {{ resident.name }}</h3>
+        <p><strong>Resident ID:</strong> {{ resident.resident_id }}</p>
+        <p><strong>Hostel:</strong> {{ resident.hostel_name }}</p>
+        <p><strong>Room No:</strong>
+            {% if resident.room_no %}
+                {{ resident.room_no }}
+            {% else %}
+                Not assigned yet
+            {% endif %}
+        </p>
+    </div>
+
+    <div class="card">
+        <h3>Your Details</h3>
+        <div class="info-grid">
+            <div class="info-box"><strong>Age:</strong> {{ resident.age }}</div>
+            <div class="info-box"><strong>Gender:</strong> {{ resident.gender }}</div>
+            <div class="info-box"><strong>Phone:</strong> {{ resident.phone }}</div>
+            <div class="info-box"><strong>Father:</strong> {{ resident.father_name }}</div>
+            <div class="info-box"><strong>Address:</strong> {{ resident.address }}</div>
+            <div class="info-box"><strong>Nationality:</strong> {{ resident.nationality }}</div>
+        </div>
+    </div>
+
+</div>
+</body>
+</html>

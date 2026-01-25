@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Resident Login | HostelSphere</title>
+    <style>
+        body {
+            display: flex;
+            height: 100vh;
+            justify-content: center;
+            align-items: center;
+            background: #e8e9dd;
+            font-family: Arial, sans-serif;
+        }
+        .login-box {
+            background: white;
+            padding: 40px;
+            width: 350px;
+            border-radius: 10px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+        }
+        h2 {
+            text-align: center;
+        }
+        input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            background: #4c629b;
+            color: white;
+            border: none;
+            border-radius: 6px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="login-box">
+    <h2>Resident Login</h2>
+    <form method="POST">
+        <input type="text" name="resident_id" placeholder="Resident ID (RES0001)" required>
+        <input type="text" name="phone" placeholder="Phone Number" required>
+        <button type="submit">Login</button>
+    </form>
+</div>
+
+</body>
+</html>

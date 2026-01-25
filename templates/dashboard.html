@@ -1,73 +1,146 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-    <title>Dashboard</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background: #f4f4f4;
-            padding: 40px;
-        }
+<meta charset="UTF-8">
+<title>Hostel Dashboard | HostelSphere</title>
 
-        .card {
-            background: white;
-            padding: 30px;
-            max-width: 600px;
-            margin: auto;
-            border-radius: 12px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-        }
-    </style>
+<style>
+body {
+    margin: 0;
+    font-family: "Segoe UI", sans-serif;
+    background: #f2f4f8;
+}
+
+.navbar {
+    background: #1f3c88;
+    color: white;
+    padding: 18px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar h2 {
+    margin: 0;
+    font-weight: 500;
+}
+
+.logout {
+    color: white;
+    text-decoration: none;
+    background: #e63946;
+    padding: 8px 16px;
+    border-radius: 6px;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 40px auto;
+    padding: 20px;
+}
+
+.card {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+    margin-bottom: 30px;
+}
+
+.card h3 {
+    margin-top: 0;
+    color: #1f3c88;
+}
+
+form input, form button {
+    padding: 10px;
+    margin: 8px 0;
+}
+
+form input {
+    width: 200px;
+}
+
+form button {
+    background: #1f3c88;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+table th {
+    background: #1f3c88;
+    color: white;
+    padding: 12px;
+}
+
+table td {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    text-align: center;
+}
+
+table tr:hover {
+    background: #f1f5ff;
+}
+</style>
 </head>
 
 <body>
 
+<div class="navbar">
+    <h2>🏠 HostelSphere – Hostel Dashboard</h2>
+    <a href="/logout" class="logout">Logout</a>
+</div>
+
+<div class="container">
+
     <div class="card">
-        <h2>Hostel Dashboard</h2>
-        <h2>Welcome, {{ hostel_name }}</h2>
-        <p>Hostel ID: {{ hostel_id }}</p>
-        <p><strong>Hostel ID:</strong> {{ hostel_id }}</p>
-        <p>Add Resident section will come here.</p>
+        <h3>Welcome, {{ hostel_name }}</h3>
+        <p><strong>Hostel ID:</strong> {{ session["hostel_id"] }}</p>
     </div>
-    <a href="/logout">Logout</a>
-    <h3>Add Resident to Hostel</h3>
 
-    <form method="POST" action="/add-resident">
-        <input type="text" name="resident_id" placeholder="Enter Resident ID (RES0001)" required>
-        <button type="submit">Add Resident</button>
-    </form>
+    <div class="card">
+        <h3>Add Resident</h3>
+        <form method="POST" action="/add-resident">
+            <input type="text" name="resident_id" placeholder="Resident ID (RES0001)" required>
+            <input type="text" name="room_no" placeholder="Room No (A-101)" required>
+            <button type="submit">Add</button>
+        </form>
+    </div>
 
-    {% if message %}
-    <p style="color: green;">{{ message }}</p>
-    {% endif %}
+    <div class="card">
+        <h3>Residents List</h3>
 
-<h2>Welcome, {{ hostel_name }}</h2>
+        {% if residents %}
+        <table>
+            <tr>
+                <th>Resident ID</th>
+                <th>Name</th>
+                <th>Room</th>
+                <th>Email</th>
+            </tr>
+            {% for r in residents %}
+            <tr>
+                <td>{{ r.resident_id }}</td>
+                <td>{{ r.name }}</td>
+                <td>{{ r.room_no }}</td>
+                <td>{{ r.email }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+        {% else %}
+        <p>No residents added yet.</p>
+        {% endif %}
+    </div>
 
-<h3>Residents List</h3>
-
-{% if residents %}
-<table border="1" cellpadding="8">
-    <tr>
-        <th>Resident ID</th>
-        <th>Name</th>
-        <th>Room No</th>
-        <th>Email</th>
-    </tr>
-
-    {% for r in residents %}
-    <tr>
-        <td>{{ r.resident_id }}</td>
-        <td>{{ r.name }}</td>
-        <td>{{ r.room_no }}</td>
-        <td>{{ r.email }}</td>
-    </tr>
-    {% endfor %}
-</table>
-{% else %}
-<p>No residents registered yet.</p>
-{% endif %}
-
+</div>
 </body>
-
 </html>

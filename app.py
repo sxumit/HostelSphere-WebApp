@@ -185,11 +185,11 @@ def add_resident():
         return redirect(url_for("login_hostel"))
 
     resident_id = request.form["resident_id"]
+    room_no = request.form["room_no"]
     hostel_id = session["hostel_id"]
 
     cursor = db.cursor()
 
-    # Check if resident exists
     cursor.execute(
         "SELECT * FROM residents WHERE resident_id = %s",
         (resident_id,)
@@ -199,14 +199,56 @@ def add_resident():
     if resident is None:
         return "Resident not found"
 
-    # LINK resident to hostel
     cursor.execute(
-        "UPDATE residents SET hostel_id = %s WHERE resident_id = %s",
-        (hostel_id, resident_id)
+        "UPDATE residents SET hostel_id = %s, room_no = %s WHERE resident_id = %s",
+        (hostel_id, room_no, resident_id)
     )
     db.commit()
 
     return redirect(url_for("dashboard"))
+
+
+
+@app.route("/login-resident", methods=["GET", "POST"])
+def login_resident():
+    if request.method == "POST":
+        resident_id = request.form["resident_id"]
+        phone = request.form["phone"]
+
+        cursor = db.cursor(dictionary=True)
+        cursor.execute(
+            "SELECT r.*, h.hostel_name FROM residents r LEFT JOIN hostels h ON r.hostel_id = h.hostel_id WHERE r.resident_id = %s",
+            (resident_id,)
+        )
+        resident = cursor.fetchone()
+        cursor.close()
+
+        if resident is None or resident["phone"] != phone:
+            return "Invalid Resident ID or phone number"
+
+        session["resident_id"] = resident["resident_id"]
+
+        return redirect(url_for("resident_dashboard"))
+
+    return render_template("login_resident.html")
+
+
+
+@app.route("/resident-dashboard")
+def resident_dashboard():
+    if "resident_id" not in session:
+        return redirect(url_for("login_resident"))
+
+    cursor = db.cursor(dictionary=True)
+    cursor.execute(
+        "SELECT r.*, h.hostel_name FROM residents r LEFT JOIN hostels h ON r.hostel_id = h.hostel_id WHERE r.resident_id = %s",
+        (session["resident_id"],)
+    )
+    resident = cursor.fetchone()
+    cursor.close()
+
+    return render_template("resident_dashboard.html", resident=resident)
+
 
 
 
